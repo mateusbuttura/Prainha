@@ -1,0 +1,109 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2015-12-01 22:22
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: Mode
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `prainha` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+
+CREATE TABLE IF NOT EXISTS `prainha`.`administradores` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '',
+  `nome` VARCHAR(125) NOT NULL COMMENT '',
+  `imgPerfil` VARCHAR(30) NOT NULL COMMENT '',
+  `email` VARCHAR(125) NOT NULL COMMENT '',
+  `usuario` VARCHAR(20) NOT NULL COMMENT '',
+  `senha` VARCHAR(15) NOT NULL COMMENT '',
+  PRIMARY KEY (`id`)  COMMENT '')
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `prainha`.`categoria` (
+  `id_Categoria` INT(11) NOT NULL COMMENT '',
+  `categoria` VARCHAR(45) NOT NULL COMMENT '',
+  PRIMARY KEY (`id_Categoria`)  COMMENT '')
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `prainha`.`noticias` (
+  `id_Noticia` INT(11) NOT NULL AUTO_INCREMENT COMMENT '',
+  `titulo` VARCHAR(125) NOT NULL COMMENT '',
+  `conteudo` TEXT NOT NULL COMMENT '',
+  `dataPub` DATE NULL DEFAULT NULL COMMENT '',
+  `tags` TEXT NULL DEFAULT NULL COMMENT '',
+  `imagem` VARCHAR(125) NULL DEFAULT NULL COMMENT '',
+  `status` INT(11) NOT NULL COMMENT '',
+  `categoria_id_Categoria` INT(11) NOT NULL COMMENT '',
+  `administradores_id` INT(11) NOT NULL COMMENT '',
+  PRIMARY KEY (`id_Noticia`)  COMMENT '',
+  INDEX `fk_noticias_categoria_idx` (`categoria_id_Categoria` ASC)  COMMENT '',
+  INDEX `fk_noticias_administradores1_idx` (`administradores_id` ASC)  COMMENT '',
+  CONSTRAINT `fk_noticias_categoria`
+    FOREIGN KEY (`categoria_id_Categoria`)
+    REFERENCES `prainha`.`categoria` (`id_Categoria`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_noticias_administradores1`
+    FOREIGN KEY (`administradores_id`)
+    REFERENCES `prainha`.`administradores` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
