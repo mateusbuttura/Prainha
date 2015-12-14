@@ -1,0 +1,14 @@
+Usuario
+mateus
+
+Senha 
+090792
+
+Link acesso ao Painel de Controle
+http://mateusbuttura.comlu.com/paineldecontrole/inicial.php
+
+Link acesso ao site
+http://mateusbuttura.comlu.com/
+
+Link acesso ao painel para publicar noticia
+http://mateusbuttura.comlu.com/paineldecontrole/gerenciar-noticia.php
